@@ -1,0 +1,27 @@
+#templates {
+  display: none;
+}
+
+div {
+  box-sizing: border-box;
+}
+
+/* Dice */
+label.dice::after {
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+  display: inline-block;
+  font-size: 14px;
+}
+
+label.dice-g::after {
+  content: '◆';
+  color: green;
+  transform: scale(0.8, 1.2);
+}
+
+label.dice-y::after {
+  content: '⬣';
+  color: yellow;
+}
+
+@@for (var i = 0; i < features.length; i++) { @@include('./`+features[i]+`/style.less') }

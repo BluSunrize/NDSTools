@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Narative Dice System Tools</title>
+
+    <script src="https://code.jquery.com/jquery-3.5.0.min.js"></script>
+    <script src="./index.js" type="application/javascript"></script>
+    <link rel="stylesheet" type="text/css" href="index.css">
+
+    <div id="templates">
+        <div name="dice_g">
+            <label class="dice dice-g"></label>
+        </div>
+        <div name="dice_y">
+            <label class="dice dice-y"></label>
+        </div>
+        <div name="dice_p">
+            <label class="dice dice-p"></label>
+        </div>
+        <div name="dice_r">
+            <label class="dice dice-r"></label>
+        </div>
+
+        @@for (var i = 0; i < features.length; i++) { @@include('./`+features[i]+`/template.html') }
+
+    </div>
+
+    <div class="tab" data-tab="minions">
+        @@for (var i = 0; i < features.length; i++) { @@include('./`+features[i]+`/tab.html') }
+    </div>
+
+</head>
+<body>
+
+</body>
+</html>

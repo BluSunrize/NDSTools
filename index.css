@@ -1,215 +1,181 @@
 #templates {
-    display: none;
+  display: none;
 }
-
 div {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
-
 /* Dice */
 label.dice::after {
-    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
-    display: inline-block;
-    font-size: 14px;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+  display: inline-block;
+  font-size: 14px;
 }
-
 label.dice-g::after {
-    content: '◆';
-    color: green;
-    transform: scale(0.8, 1.2);
+  content: '◆';
+  color: green;
+  transform: scale(0.8, 1.2);
 }
-
 label.dice-y::after {
-    content: '⬣';
-    color: yellow;
+  content: '⬣';
+  color: yellow;
 }
-
 /* Minion Group */
 div#minions {
-    width: 100%;
-    overflow: auto;
+  width: 100%;
+  overflow: auto;
 }
-
 div[name="miniongroup"] {
-    display: inline-block;
-    border: 2px solid darkred;
-    min-height: 150px;
-    min-width: 700px;
-    width: 700px;
-    padding: 10px;
-    margin: 10px;
+  display: inline-block;
+  border: 2px solid darkred;
+  min-height: 150px;
+  min-width: 700px;
+  width: 700px;
+  padding: 10px;
+  margin: 10px;
 }
-
 div[name="miniongroup"] div.container-name,
-div[name="miniongroup"] div.container-wounds,
-div[name="miniongroup"] div.container-attributes {
-    display: flex;
-    margin: 2px;
+div[name="miniongroup"] div.container-wounds {
+  display: flex;
+  margin: 2px;
 }
-
 div[name="miniongroup"] button[name="delete"] {
-    float: right;
-    height: 24px;
-    width: 24px;
-    padding: 0;
+  float: right;
+  height: 24px;
+  width: 24px;
+  padding: 0;
 }
-
 div[name="miniongroup"] label.field-label {
-    font-weight: bold;
-    text-transform: uppercase;
-    font-family: arial, sans-serif;
-    font-size: 12px;
-    margin: 5px;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-family: arial, sans-serif;
+  font-size: 12px;
+  margin: 5px;
 }
-
 /* Attributes */
-
-div[name="miniongroup"] div.container-attributes {
-    display: grid;
-    grid-template-columns: auto auto;
-    grid-template-rows: auto auto;
+div.container-attributes {
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-template-rows: auto auto;
 }
-
-div.attribute {
-    background: darkred;
-    border-radius: 10px;
-    min-width: 80px;
-    width: 80px;
-    height: 90px;
-    margin-right: 10px;
-    text-align: center;
-    padding-top: 12px;
+div.container-attributes div.attribute {
+  background: darkred;
+  border-radius: 10px;
+  min-width: 80px;
+  width: 80px;
+  height: 90px;
+  margin-right: 10px;
+  text-align: center;
+  padding-top: 12px;
+  /* yay, chrome workarounds */
 }
-
-div.attribute input[type=number] {
-    width: 40px;
-    margin-bottom: 7px;
-    border-radius: 50%;
-    padding-top: 5px;
-    padding-bottom: 5px;
-    text-align: center;
-    -moz-appearance: textfield;
-    font-size: 25px;
-    font-weight: bold;
+div.container-attributes div.attribute input[type=number] {
+  width: 40px;
+  margin-bottom: 7px;
+  border-radius: 50%;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  text-align: center;
+  -moz-appearance: textfield;
+  font-size: 25px;
+  font-weight: bold;
 }
-/* yay, chrome workarounds */
-div.attribute input[type=number]::-webkit-inner-spin-button,
-div.attribute input[type=number]::-webkit-outer-spin-button {
-    -webkit-appearance: none;
+div.container-attributes div.attribute input[type=number]::-webkit-inner-spin-button,
+div.container-attributes div.attribute input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
 }
-
-div.attribute label {
-    color: white;
+div.container-attributes div.attribute label {
+  color: white;
 }
-
-div.derived {
-    grid-row: 1 / span 1;
-    grid-column: 1 / span 1;
-    display: flex;
+div.container-attributes div.derived {
+  grid-row: 1 / span 1;
+  grid-column: 1 / span 1;
+  display: flex;
 }
-
-div.template {
-    background: grey;
-    border-radius: 10px;
-    text-align: center;
-    padding-top: 12px;
-    margin-right: 10px;
-    height: 90px;
-    color: white;
-    width: min-content;
+div.container-attributes div.template {
+  background: grey;
+  border-radius: 10px;
+  text-align: center;
+  padding-top: 12px;
+  margin-right: 10px;
+  height: 90px;
+  color: white;
+  width: min-content;
 }
-
-div.template select {
-    background: none;
-    border: none;
-    color: white;
-    margin-top: 20px;
-    margin-bottom: 12px;
-    text-align: center;
-    /* yay, chrome workarounds */
-    text-align-last: center;
+div.container-attributes div.template select {
+  background: none;
+  border: none;
+  color: white;
+  margin-top: 20px;
+  margin-bottom: 12px;
+  text-align: center;
+  /* yay, chrome workarounds */
+  text-align-last: center;
 }
-div.template select option {
-    color: black;
+div.container-attributes div.template select option {
+  color: black;
 }
-
-ul.conditions {
-    grid-row: 1 / span 2;
-    grid-column: 2 / span 1;
-    width: 250px;
-    list-style-type: none;
-    padding: 0;
+div.container-attributes ul.conditions {
+  grid-row: 1 / span 2;
+  grid-column: 2 / span 1;
+  width: 250px;
+  list-style-type: none;
+  padding: 0;
 }
-
-ul.conditions li {
-    background: grey;
-    color: white;
-    border-radius: 10px;
-    margin-bottom: 10px;
-    padding: 4px;
+div.container-attributes ul.conditions li {
+  background: grey;
+  color: white;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  padding: 4px;
 }
-
-ul.conditions li input {
-    float: right;
-    color: white;
-    width: 30px;
-    background: none;
-    border: none;
+div.container-attributes ul.conditions li input {
+  float: right;
+  color: white;
+  width: 30px;
+  background: none;
+  border: none;
 }
-
-ul.conditions li p {
-    margin: 0;
+div.container-attributes ul.conditions li p {
+  margin: 0;
 }
-
-div.characteristics {
-    grid-row: 2 / span 1;
-    grid-column: 1 / span 1;
-    display: flex;
+div.container-attributes div.characteristics {
+  grid-row: 2 / span 1;
+  grid-column: 1 / span 1;
+  display: flex;
 }
-
-div.characteristics .attribute {
-    width: 60px;
-    min-width: 60px;
-    margin: 5px;
-    height: 80px;
+div.container-attributes div.characteristics .attribute {
+  width: 60px;
+  min-width: 60px;
+  margin: 5px;
+  height: 80px;
 }
-
-div.characteristics .attribute input {
-    margin-bottom: 0;
+div.container-attributes div.characteristics .attribute input {
+  margin-bottom: 0;
 }
-
-div.characteristics .attribute label {
-    font-size: 8px;
+div.container-attributes div.characteristics .attribute label {
+  font-size: 8px;
 }
-
-div.characteristics .attribute div.attribute-dice {
-    display: inline-flex;
-    margin-top: 5px;
-    text-align: center;
+div.container-attributes div.characteristics .attribute div.attribute-dice {
+  display: inline-flex;
+  margin-top: 5px;
+  text-align: center;
+  line-height: 20px;
 }
-/* yay, chrome workarounds */
-.selector:not(*:root), div.characteristics .attribute div.attribute-dice {
-    margin-top: 10px;
-}
-
 /* Wounds */
 div.container-wounds label.field-label {
-    min-width: 112px;
+  min-width: 112px;
 }
-
 input[type=radio].kill + label {
-    opacity: 50%;
-    display: inline-block;
-    width: 0;
-    margin-left: -20px;
-    margin-right: 20px;
-    pointer-events: none;
+  opacity: 50%;
+  display: inline-block;
+  width: 0;
+  margin-left: -20px;
+  margin-right: 20px;
+  pointer-events: none;
 }
-
 input[type=radio].kill + label::after {
-    content: '💀';
+  content: '💀';
 }
-
 input[type=radio].kill:checked + label {
-    opacity: 100%;
+  opacity: 100%;
 }

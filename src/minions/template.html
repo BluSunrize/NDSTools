@@ -1,0 +1,84 @@
+<div name="miniongroup">
+    <button name="delete">X</button>
+    <div class="container-name">
+        <label class="field-label">Name:</label>
+        <input name="name" type="text">
+    </div>
+
+    <div class="container-wounds">
+        <label class="field-label">Wound Tracker:</label>
+        <div class="wounds">
+        </div>
+    </div>
+
+    <div class="container-attributes">
+        <div class="derived">
+            <div class="attribute">
+                <input name="group_size" type="number" min="1">
+                <label class="field-label">Groupsize</label>
+            </div>
+            <div class="attribute">
+                <input name="soak" type="number" min="0">
+                <label class="field-label">Soak</label>
+            </div>
+            <div class="attribute">
+                <input name="wounds_per" type="number" min="1">
+                <label class="field-label">Wounds</label>
+            </div>
+            <div class="template">
+                <select name="minion_template"> </select>
+                <label class="field-label">Template</label>
+            </div>
+        </div>
+        <ul class="conditions">
+            <li>
+                <label class="field-label">Staggered</label>
+                <input type="number" min="0" value="0">
+                <p>Can not perform actions (including downgrading them)</p>
+            </li>
+            <li>
+                <label class="field-label">Immobilized</label>
+                <input type="number" min="0" value="0">
+                <p>Can not perform maneuver (including by strain or advantage)</p>
+            </li>
+            <li>
+                <label class="field-label">Disorient</label>
+                <input type="number" min="0" value="0">
+                <p>Adds a setback to all checks</p>
+            </li>
+        </ul>
+
+        <div class="characteristics">
+            <div class="attribute">
+                <input name="brawn" type="number" min="1" value="2">
+                <label class="field-label">Brawn</label>
+                <div class="attribute-dice" name="dice_brawn"></div>
+            </div>
+            <div class="attribute">
+                <input name="agility" type="number" min="1" value="2">
+                <label class="field-label">Agility</label>
+                <div class="attribute-dice" name="dice_agility"></div>
+            </div>
+            <div class="attribute">
+                <input name="intellect" type="number" min="1" value="2">
+                <label class="field-label">Intellect</label>
+                <div class="attribute-dice" name="dice_intellect"></div>
+            </div>
+            <div class="attribute">
+                <input name="cunning" type="number" min="1" value="2">
+                <label class="field-label">Cunning</label>
+                <div class="attribute-dice" name="dice_cunning"></div>
+            </div>
+            <div class="attribute">
+                <input name="willpower" type="number" min="1" value="2">
+                <label class="field-label">Willpower</label>
+                <div class="attribute-dice" name="dice_willpower"></div>
+            </div>
+            <div class="attribute">
+                <input name="presence" type="number" min="1" value="2">
+                <label class="field-label">Presence</label>
+                <div class="attribute-dice" name="dice_presence"></div>
+            </div>
+        </div>
+    </div>
+</div>
