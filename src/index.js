@@ -1,0 +1,1 @@
+@@for (var i = 0; i < features.length; i++) { @@include('./`+features[i]+`/script.js') }

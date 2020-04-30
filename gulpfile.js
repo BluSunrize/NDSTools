@@ -9,7 +9,7 @@ var features = fs.readdirSync('src').filter(function (file) {
 });
 
 gulp.task('fileinclude', function () {
-    return gulp.src(['src/index.html'])
+    return gulp.src(['src/index.html', 'src/index.js'])
         .pipe(fileinclude({
             prefix: '@@',
             basepath: '@file',
