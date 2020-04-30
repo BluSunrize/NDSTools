@@ -92,6 +92,11 @@ div.attribute input[type=number] {
     font-size: 25px;
     font-weight: bold;
 }
+/* yay, chrome workarounds */
+div.attribute input[type=number]::-webkit-inner-spin-button,
+div.attribute input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+}
 
 div.attribute label {
     color: white;
@@ -121,6 +126,11 @@ div.template select {
     margin-top: 20px;
     margin-bottom: 12px;
     text-align: center;
+    /* yay, chrome workarounds */
+    text-align-last: center;
+}
+div.template select option {
+    color: black;
 }
 
 ul.conditions {
@@ -176,6 +186,10 @@ div.characteristics .attribute div.attribute-dice {
     display: inline-flex;
     margin-top: 5px;
     text-align: center;
+}
+/* yay, chrome workarounds */
+.selector:not(*:root), div.characteristics .attribute div.attribute-dice {
+    margin-top: 10px;
 }
 
 /* Wounds */
