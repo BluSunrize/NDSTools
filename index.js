@@ -1,4 +1,16 @@
- let minion_group_index = 0;
+$(document).ready(function () {
+    const tabs = $('.tab-content');
+    $('li.tab').click(function () {
+        let name = $(this).attr('data-tab');
+        tabs.hide();
+        $(`div.tab-content[data-tab="${name}"]`).show();
+    });
+
+    $(`li.tab[data-tab="home"]`).click();
+});
+
+
+let minion_group_index = 0;
 const minion_common_stat_lines = {
     "Average": [2, 2, 2, 2, 2, 2],
     "Brawn": [3, 2, 2, 2, 2, 2],
@@ -116,4 +128,4 @@ function minion_initButtons() {
 
 $(document).ready(function () {
     minion_initButtons();
-}); 
+});
