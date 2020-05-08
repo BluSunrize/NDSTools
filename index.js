@@ -81,7 +81,7 @@ function minion_addMinionGroup() {
         for (let i = 0; i <= total; i++) {
             let checkbox = $(`<input type="radio" class="wound">`);
             checkbox.click(function () {
-                group.wounds = i;
+                group.wounds = 1 + i;
                 updateWounds();
                 updateSkills();
             });
@@ -93,13 +93,14 @@ function minion_addMinionGroup() {
     }
 
     function updateWounds() {
-        el_wounds.children('input[type="radio"]').prop('checked', false).slice(0, group.wounds + 1).prop('checked', true);
+        el_wounds.children('input[type="radio"]').prop('checked', false).slice(0, group.wounds).prop('checked', true);
     }
 
     function updateSkills() {
         el_characteristics.children().each(function (index) {
             let el_attr = $(this);
-            let lost_members = Math.floor(group.wounds / group.wounds_per);
+            let wounds = Math.max(0, group.wounds - 1);
+            let lost_members = Math.floor(wounds / group.wounds_per);
             let char = el_attr.find('input[type="number"]').val();
             let rank = Math.max(group.size - 1 - lost_members, 0);
             let dice = Math.max(char, rank);
