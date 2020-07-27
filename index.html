@@ -23,6 +23,125 @@
         </div>
 
          <div name="miniongroup">
+    <button name="delete">X</button>
+    <div class="container-name">
+        <label class="field-label">Name:</label>
+        <input name="name" type="text">
+    </div>
+
+    <div class="container-wounds">
+        <label class="field-label">Wound Tracker:</label>
+        <div class="wounds">
+        </div>
+    </div>
+
+    
+
+    <div class="container-attributes">
+        <div class="derived">
+            
+            <div class="attribute">
+                <input name="group_size" type="number" min="1">
+                <label class="field-label">Groupsize</label>
+            </div>
+            
+            <div class="attribute">
+                <input name="soak" type="number" min="0">
+                <label class="field-label">Soak</label>
+            </div>
+            <div class="attribute">
+                <input name="wounds_per" type="number" min="1">
+                <label class="field-label">Wounds</label>
+            </div>
+            
+            <div class="template">
+                <select name="adversary_template"> </select>
+                <label class="field-label">Template</label>
+            </div>
+        </div>
+        <ul class="conditions">
+            <li>
+                <label class="field-label">Staggered</label>
+                <input type="number" min="0" value="0">
+                <p>Can not perform actions (including downgrading them)</p>
+            </li>
+            <li>
+                <label class="field-label">Immobilized</label>
+                <input type="number" min="0" value="0">
+                <p>Can not perform maneuver (including by strain or advantage)</p>
+            </li>
+            <li>
+                <label class="field-label">Disorient</label>
+                <input type="number" min="0" value="0">
+                <p>Adds a setback to all checks</p>
+            </li>
+        </ul>
+
+        <div class="characteristics">
+            <div class="attribute-column">
+                <div class="attribute">
+                    <input name="brawn`" type="number" min="1" value="2">
+                    <label class="field-label">Brawn</label>
+                </div>
+                
+                <div class="attribute-dice" name="dice_willpower"></div>
+                
+                
+            </div>
+            <div class="attribute-column">
+                <div class="attribute">
+                    <input name="agility`" type="number" min="1" value="2">
+                    <label class="field-label">Agility</label>
+                </div>
+                
+                <div class="attribute-dice" name="dice_willpower"></div>
+                
+                
+            </div>
+            <div class="attribute-column">
+                <div class="attribute">
+                    <input name="intellect`" type="number" min="1" value="2">
+                    <label class="field-label">Intellect</label>
+                </div>
+                
+                <div class="attribute-dice" name="dice_willpower"></div>
+                
+                
+            </div>
+            <div class="attribute-column">
+                <div class="attribute">
+                    <input name="cunning`" type="number" min="1" value="2">
+                    <label class="field-label">Cunning</label>
+                </div>
+                
+                <div class="attribute-dice" name="dice_willpower"></div>
+                
+                
+            </div>
+            <div class="attribute-column">
+                <div class="attribute">
+                    <input name="willpower`" type="number" min="1" value="2">
+                    <label class="field-label">Willpower</label>
+                </div>
+                
+                <div class="attribute-dice" name="dice_willpower"></div>
+                
+                
+            </div>
+            <div class="attribute-column">
+                <div class="attribute">
+                    <input name="presence`" type="number" min="1" value="2">
+                    <label class="field-label">Presence</label>
+                </div>
+                
+                <div class="attribute-dice" name="dice_willpower"></div>
+                
+                
+            </div>
+        </div>
+    </div>
+</div>
+         <div name="rival">
              <button name="delete">X</button>
              <div class="container-name">
                  <label class="field-label">Name:</label>
@@ -35,12 +154,11 @@
                  </div>
              </div>
 
+             
+
              <div class="container-attributes">
                  <div class="derived">
-                     <div class="attribute">
-                         <input name="group_size" type="number" min="1">
-                         <label class="field-label">Groupsize</label>
-                     </div>
+                     
                      <div class="attribute">
                          <input name="soak" type="number" min="0">
                          <label class="field-label">Soak</label>
@@ -49,8 +167,9 @@
                          <input name="wounds_per" type="number" min="1">
                          <label class="field-label">Wounds</label>
                      </div>
+                     
                      <div class="template">
-                         <select name="minion_template"> </select>
+                         <select name="adversary_template"> </select>
                          <label class="field-label">Template</label>
                      </div>
                  </div>
@@ -73,35 +192,382 @@
                  </ul>
 
                  <div class="characteristics">
+                     <div class="attribute-column">
+                         <div class="attribute">
+                             <input name="brawn`" type="number" min="1" value="2">
+                             <label class="field-label">Brawn</label>
+                         </div>
+                         
+                         
+                         
+                         <div class="attribute-dice" name="dice_presence" rank="1">
+                         </div>
+                         <br>
+                         
+                         <div class="attribute-dice" name="dice_presence" rank="2">
+                         </div>
+                         <br>
+                         
+                         <div class="attribute-dice" name="dice_presence" rank="3">
+                         </div>
+                         <br>
+                         
+                         <div class="attribute-dice" name="dice_presence" rank="4">
+                         </div>
+                         <br>
+                         
+                         
+                     </div>
+                     <div class="attribute-column">
+                         <div class="attribute">
+                             <input name="agility`" type="number" min="1" value="2">
+                             <label class="field-label">Agility</label>
+                         </div>
+                         
+                         
+                         
+                         <div class="attribute-dice" name="dice_presence" rank="1">
+                         </div>
+                         <br>
+                         
+                         <div class="attribute-dice" name="dice_presence" rank="2">
+                         </div>
+                         <br>
+                         
+                         <div class="attribute-dice" name="dice_presence" rank="3">
+                         </div>
+                         <br>
+                         
+                         <div class="attribute-dice" name="dice_presence" rank="4">
+                         </div>
+                         <br>
+                         
+                         
+                     </div>
+                     <div class="attribute-column">
+                         <div class="attribute">
+                             <input name="intellect`" type="number" min="1" value="2">
+                             <label class="field-label">Intellect</label>
+                         </div>
+                         
+                         
+                         
+                         <div class="attribute-dice" name="dice_presence" rank="1">
+                         </div>
+                         <br>
+                         
+                         <div class="attribute-dice" name="dice_presence" rank="2">
+                         </div>
+                         <br>
+                         
+                         <div class="attribute-dice" name="dice_presence" rank="3">
+                         </div>
+                         <br>
+                         
+                         <div class="attribute-dice" name="dice_presence" rank="4">
+                         </div>
+                         <br>
+                         
+                         
+                     </div>
+                     <div class="attribute-column">
+                         <div class="attribute">
+                             <input name="cunning`" type="number" min="1" value="2">
+                             <label class="field-label">Cunning</label>
+                         </div>
+                         
+                         
+                         
+                         <div class="attribute-dice" name="dice_presence" rank="1">
+                         </div>
+                         <br>
+                         
+                         <div class="attribute-dice" name="dice_presence" rank="2">
+                         </div>
+                         <br>
+                         
+                         <div class="attribute-dice" name="dice_presence" rank="3">
+                         </div>
+                         <br>
+                         
+                         <div class="attribute-dice" name="dice_presence" rank="4">
+                         </div>
+                         <br>
+                         
+                         
+                     </div>
+                     <div class="attribute-column">
+                         <div class="attribute">
+                             <input name="willpower`" type="number" min="1" value="2">
+                             <label class="field-label">Willpower</label>
+                         </div>
+                         
+                         
+                         
+                         <div class="attribute-dice" name="dice_presence" rank="1">
+                         </div>
+                         <br>
+                         
+                         <div class="attribute-dice" name="dice_presence" rank="2">
+                         </div>
+                         <br>
+                         
+                         <div class="attribute-dice" name="dice_presence" rank="3">
+                         </div>
+                         <br>
+                         
+                         <div class="attribute-dice" name="dice_presence" rank="4">
+                         </div>
+                         <br>
+                         
+                         
+                     </div>
+                     <div class="attribute-column">
+                         <div class="attribute">
+                             <input name="presence`" type="number" min="1" value="2">
+                             <label class="field-label">Presence</label>
+                         </div>
+                         
+                         
+                         
+                         <div class="attribute-dice" name="dice_presence" rank="1">
+                         </div>
+                         <br>
+                         
+                         <div class="attribute-dice" name="dice_presence" rank="2">
+                         </div>
+                         <br>
+                         
+                         <div class="attribute-dice" name="dice_presence" rank="3">
+                         </div>
+                         <br>
+                         
+                         <div class="attribute-dice" name="dice_presence" rank="4">
+                         </div>
+                         <br>
+                         
+                         
+                     </div>
+                 </div>
+             </div>
+         </div>
+         <div name="nemesis">
+             <button name="delete">X</button>
+             <div class="container-name">
+                 <label class="field-label">Name:</label>
+                 <input name="name" type="text">
+             </div>
+
+             <div class="container-wounds">
+                 <label class="field-label">Wound Tracker:</label>
+                 <div class="wounds">
+                 </div>
+             </div>
+
+             
+             <div class="container-strain">
+                 <label class="field-label">Strain Tracker:</label>
+                 <div class="strain">
+                 </div>
+             </div>
+             
+
+             <div class="container-attributes">
+                 <div class="derived">
+                     
                      <div class="attribute">
-                         <input name="brawn" type="number" min="1" value="2">
-                         <label class="field-label">Brawn</label>
-                         <div class="attribute-dice" name="dice_brawn"></div>
+                         <input name="soak" type="number" min="0">
+                         <label class="field-label">Soak</label>
                      </div>
                      <div class="attribute">
-                         <input name="agility" type="number" min="1" value="2">
-                         <label class="field-label">Agility</label>
-                         <div class="attribute-dice" name="dice_agility"></div>
+                         <input name="wounds_per" type="number" min="1">
+                         <label class="field-label">Wounds</label>
                      </div>
+                     
                      <div class="attribute">
-                         <input name="intellect" type="number" min="1" value="2">
-                         <label class="field-label">Intellect</label>
-                         <div class="attribute-dice" name="dice_intellect"></div>
+                         <input name="strain_per" type="number" min="1">
+                         <label class="field-label">Strain</label>
                      </div>
-                     <div class="attribute">
-                         <input name="cunning" type="number" min="1" value="2">
-                         <label class="field-label">Cunning</label>
-                         <div class="attribute-dice" name="dice_cunning"></div>
+                     
+                     <div class="template">
+                         <select name="adversary_template"> </select>
+                         <label class="field-label">Template</label>
                      </div>
-                     <div class="attribute">
-                         <input name="willpower" type="number" min="1" value="2">
-                         <label class="field-label">Willpower</label>
-                         <div class="attribute-dice" name="dice_willpower"></div>
+                 </div>
+                 <ul class="conditions">
+                     <li>
+                         <label class="field-label">Staggered</label>
+                         <input type="number" min="0" value="0">
+                         <p>Can not perform actions (including downgrading them)</p>
+                     </li>
+                     <li>
+                         <label class="field-label">Immobilized</label>
+                         <input type="number" min="0" value="0">
+                         <p>Can not perform maneuver (including by strain or advantage)</p>
+                     </li>
+                     <li>
+                         <label class="field-label">Disorient</label>
+                         <input type="number" min="0" value="0">
+                         <p>Adds a setback to all checks</p>
+                     </li>
+                 </ul>
+
+                 <div class="characteristics">
+                     <div class="attribute-column">
+                         <div class="attribute">
+                             <input name="brawn`" type="number" min="1" value="2">
+                             <label class="field-label">Brawn</label>
+                         </div>
+                         
+                         
+                         
+                         <div class="attribute-dice" name="dice_presence" rank="1">
+                         </div>
+                         <br>
+                         
+                         <div class="attribute-dice" name="dice_presence" rank="2">
+                         </div>
+                         <br>
+                         
+                         <div class="attribute-dice" name="dice_presence" rank="3">
+                         </div>
+                         <br>
+                         
+                         <div class="attribute-dice" name="dice_presence" rank="4">
+                         </div>
+                         <br>
+                         
+                         
                      </div>
-                     <div class="attribute">
-                         <input name="presence" type="number" min="1" value="2">
-                         <label class="field-label">Presence</label>
-                         <div class="attribute-dice" name="dice_presence"></div>
+                     <div class="attribute-column">
+                         <div class="attribute">
+                             <input name="agility`" type="number" min="1" value="2">
+                             <label class="field-label">Agility</label>
+                         </div>
+                         
+                         
+                         
+                         <div class="attribute-dice" name="dice_presence" rank="1">
+                         </div>
+                         <br>
+                         
+                         <div class="attribute-dice" name="dice_presence" rank="2">
+                         </div>
+                         <br>
+                         
+                         <div class="attribute-dice" name="dice_presence" rank="3">
+                         </div>
+                         <br>
+                         
+                         <div class="attribute-dice" name="dice_presence" rank="4">
+                         </div>
+                         <br>
+                         
+                         
+                     </div>
+                     <div class="attribute-column">
+                         <div class="attribute">
+                             <input name="intellect`" type="number" min="1" value="2">
+                             <label class="field-label">Intellect</label>
+                         </div>
+                         
+                         
+                         
+                         <div class="attribute-dice" name="dice_presence" rank="1">
+                         </div>
+                         <br>
+                         
+                         <div class="attribute-dice" name="dice_presence" rank="2">
+                         </div>
+                         <br>
+                         
+                         <div class="attribute-dice" name="dice_presence" rank="3">
+                         </div>
+                         <br>
+                         
+                         <div class="attribute-dice" name="dice_presence" rank="4">
+                         </div>
+                         <br>
+                         
+                         
+                     </div>
+                     <div class="attribute-column">
+                         <div class="attribute">
+                             <input name="cunning`" type="number" min="1" value="2">
+                             <label class="field-label">Cunning</label>
+                         </div>
+                         
+                         
+                         
+                         <div class="attribute-dice" name="dice_presence" rank="1">
+                         </div>
+                         <br>
+                         
+                         <div class="attribute-dice" name="dice_presence" rank="2">
+                         </div>
+                         <br>
+                         
+                         <div class="attribute-dice" name="dice_presence" rank="3">
+                         </div>
+                         <br>
+                         
+                         <div class="attribute-dice" name="dice_presence" rank="4">
+                         </div>
+                         <br>
+                         
+                         
+                     </div>
+                     <div class="attribute-column">
+                         <div class="attribute">
+                             <input name="willpower`" type="number" min="1" value="2">
+                             <label class="field-label">Willpower</label>
+                         </div>
+                         
+                         
+                         
+                         <div class="attribute-dice" name="dice_presence" rank="1">
+                         </div>
+                         <br>
+                         
+                         <div class="attribute-dice" name="dice_presence" rank="2">
+                         </div>
+                         <br>
+                         
+                         <div class="attribute-dice" name="dice_presence" rank="3">
+                         </div>
+                         <br>
+                         
+                         <div class="attribute-dice" name="dice_presence" rank="4">
+                         </div>
+                         <br>
+                         
+                         
+                     </div>
+                     <div class="attribute-column">
+                         <div class="attribute">
+                             <input name="presence`" type="number" min="1" value="2">
+                             <label class="field-label">Presence</label>
+                         </div>
+                         
+                         
+                         
+                         <div class="attribute-dice" name="dice_presence" rank="1">
+                         </div>
+                         <br>
+                         
+                         <div class="attribute-dice" name="dice_presence" rank="2">
+                         </div>
+                         <br>
+                         
+                         <div class="attribute-dice" name="dice_presence" rank="3">
+                         </div>
+                         <br>
+                         
+                         <div class="attribute-dice" name="dice_presence" rank="4">
+                         </div>
+                         <br>
+                         
+                         
                      </div>
                  </div>
              </div>
@@ -112,7 +578,7 @@
     <ul class="navigation">
         <li class="tab" data-tab="home">home</li>
         
-        <li class="tab" data-tab="minions">minions</li>
+        <li class="tab" data-tab="adversaries">adversaries</li>
         
     </ul>
 
@@ -130,9 +596,11 @@
     </div>
 
     
-    <div class="tab-content" data-tab="minions">
-        <div id="minions"></div>
+    <div class="tab-content" data-tab="adversaries">
+        <div id="adversaries"></div>
         <button id="add_minion">Add Minion Group</button>
+        <button id="add_rival">Add Rival</button>
+        <button id="add_nemesis">Add Nemesis</button>
     </div>
     
 

@@ -1,10 +1,13 @@
-/* Minion Group */
-div#minions {
+/* Adversary Container */
+div#adversaries {
   width: 100%;
   overflow: auto;
 }
 
-#add_minion {
+/* Add Buttons */
+#add_minion,
+#add_rival,
+#add_nemesis {
   height: 35px;
   border-radius: 9px;
   border: 2px solid darkred;
@@ -16,7 +19,10 @@ div#minions {
   }
 }
 
-div[name="miniongroup"] {
+/* Adversary Elements */
+div[name="miniongroup"],
+div[name="rival"],
+div[name="nemesis"] {
   display: inline-block;
   border: 2px solid darkred;
   min-height: 150px;
@@ -27,7 +33,8 @@ div[name="miniongroup"] {
 
 
   div.container-name,
-  div.container-wounds {
+  div.container-wounds,
+  div.container-strain {
     display: flex;
     margin: 2px;
   }
@@ -154,11 +161,15 @@ div.container-attributes {
     grid-column: 1 / span 1;
     display: flex;
 
-    .attribute {
+    div.attribute-column {
+      margin: 5px;
+    }
+
+    div.attribute {
       width: 60px;
       min-width: 60px;
-      margin: 5px;
       height: 80px;
+      margin: 0;
 
       input {
         margin-bottom: 0;
@@ -167,13 +178,13 @@ div.container-attributes {
       label {
         font-size: 8px;
       }
+    }
 
-      div.attribute-dice {
-        display: inline-flex;
-        margin-top: 5px;
-        text-align: center;
-        line-height: 20px;
-      }
+    div.attribute-dice {
+      display: inline-flex;
+      margin-top: 5px;
+      text-align: center;
+      line-height: 20px;
     }
   }
 }

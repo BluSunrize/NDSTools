@@ -45,22 +45,30 @@ ul.navigation li:hover {
 .tab-content {
   padding: 0 20px;
 }
-/* Minion Group */
-div#minions {
+/* Adversary Container */
+div#adversaries {
   width: 100%;
   overflow: auto;
 }
-#add_minion {
+/* Add Buttons */
+#add_minion,
+#add_rival,
+#add_nemesis {
   height: 35px;
   border-radius: 9px;
   border: 2px solid darkred;
   margin-top: 5px;
 }
-#add_minion:hover {
+#add_minion:hover,
+#add_rival:hover,
+#add_nemesis:hover {
   background: white;
   border-color: red;
 }
-div[name="miniongroup"] {
+/* Adversary Elements */
+div[name="miniongroup"],
+div[name="rival"],
+div[name="nemesis"] {
   display: inline-block;
   border: 2px solid darkred;
   min-height: 150px;
@@ -70,17 +78,28 @@ div[name="miniongroup"] {
   margin: 10px;
 }
 div[name="miniongroup"] div.container-name,
-div[name="miniongroup"] div.container-wounds {
+div[name="rival"] div.container-name,
+div[name="nemesis"] div.container-name,
+div[name="miniongroup"] div.container-wounds,
+div[name="rival"] div.container-wounds,
+div[name="nemesis"] div.container-wounds,
+div[name="miniongroup"] div.container-strain,
+div[name="rival"] div.container-strain,
+div[name="nemesis"] div.container-strain {
   display: flex;
   margin: 2px;
 }
-div[name="miniongroup"] button[name="delete"] {
+div[name="miniongroup"] button[name="delete"],
+div[name="rival"] button[name="delete"],
+div[name="nemesis"] button[name="delete"] {
   float: right;
   height: 24px;
   width: 24px;
   padding: 0;
 }
-div[name="miniongroup"] label.field-label {
+div[name="miniongroup"] label.field-label,
+div[name="rival"] label.field-label,
+div[name="nemesis"] label.field-label {
   font-weight: bold;
   text-transform: uppercase;
   font-family: arial, sans-serif;
@@ -179,19 +198,22 @@ div.container-attributes div.characteristics {
   grid-column: 1 / span 1;
   display: flex;
 }
-div.container-attributes div.characteristics .attribute {
+div.container-attributes div.characteristics div.attribute-column {
+  margin: 5px;
+}
+div.container-attributes div.characteristics div.attribute {
   width: 60px;
   min-width: 60px;
-  margin: 5px;
   height: 80px;
+  margin: 0;
 }
-div.container-attributes div.characteristics .attribute input {
+div.container-attributes div.characteristics div.attribute input {
   margin-bottom: 0;
 }
-div.container-attributes div.characteristics .attribute label {
+div.container-attributes div.characteristics div.attribute label {
   font-size: 8px;
 }
-div.container-attributes div.characteristics .attribute div.attribute-dice {
+div.container-attributes div.characteristics div.attribute-dice {
   display: inline-flex;
   margin-top: 5px;
   text-align: center;

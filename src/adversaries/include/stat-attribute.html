@@ -1,0 +1,16 @@
+<div class="attribute-column">
+    <div class="attribute">
+        <input name="@@key`" type="number" min="1" value="2">
+        <label class="field-label">@@name</label>
+    </div>
+    @@if (group === true) {
+    <div class="attribute-dice" name="dice_willpower"></div>
+    }
+    @@if (group === false) {
+    @@for (var i = 1; i < 5; i++) {
+    <div class="attribute-dice" name="dice_presence" rank="`+i+`">
+    </div>
+    <br>
+    }
+    }
+</div>
