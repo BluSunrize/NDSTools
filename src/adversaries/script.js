@@ -64,8 +64,8 @@ function adversaries_addAdversary(selector) {
         el_soak.val(adversary.soak);
         el_wounds_per.val(adversary.wounds_per);
         el_strain_per.val(adversary.strain_per);
-        buildTrack('wounds');
-        buildTrack('strain');
+        buildTrack('wounds', 'wound');
+        buildTrack('strain', 'strain');
         updateTrack('wounds');
         updateTrack('strain');
         updateSkills();
