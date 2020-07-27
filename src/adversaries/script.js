@@ -107,21 +107,13 @@ function adversaries_addAdversary(selector) {
             if (el_rank.length > 0) {
                 el_rank.each(function () {
                     let rank = $(this).attr('rank');
-                    let dice = Math.max(char, rank);
-                    let upgrades = Math.min(char, rank);
-                    let pool = $('#templates div[name="dice_y"]').html().repeat(Math.max(0, upgrades));
-                    pool += $('#templates div[name="dice_g"]').html().repeat(dice - upgrades);
-                    $(this).html(pool);
+                    $(this).html(global_buildDice(char, rank));
                 })
             } else {
                 let wounds = Math.max(0, adversary.wounds - 1);
                 let lost_members = Math.floor(wounds / adversary.wounds_per);
                 let rank = Math.max(adversary.size - 1 - lost_members, 0);
-                let dice = Math.max(char, rank);
-                let upgrades = Math.min(char, rank);
-                let pool = $('#templates div[name="dice_y"]').html().repeat(Math.max(0, upgrades));
-                pool += $('#templates div[name="dice_g"]').html().repeat(dice - upgrades);
-                el_attr.find('div.attribute-dice').html(pool);
+                el_attr.find('div.attribute-dice').html(global_buildDice(char, rank));
             }
         });
     }
