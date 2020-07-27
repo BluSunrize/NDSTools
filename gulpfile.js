@@ -7,7 +7,7 @@ var append = require('gulp-append-prepend');
 var less = require('gulp-less');
 
 var features = fs.readdirSync('src').filter(function (file) {
-    return fs.statSync(path.join('src', file)).isDirectory();
+    return file!=='includes' && fs.statSync(path.join('src', file)).isDirectory();
 });
 
 gulp.task('html', function () {
