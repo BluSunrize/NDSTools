@@ -17,6 +17,16 @@ function global_buildDice(num1, num2) {
     return pool;
 }
 
+function global_buildTrack(container, length, interval, radio_class, interval_class, callback) {
+    for (let i = 0; i <= length; i++) {
+        let checkbox = $(`<input type="radio" class="${radio_class}">`);
+        checkbox.click(() => callback(i));
+        container.append(checkbox);
+        if (i > 0 && i % interval === 0)
+            checkbox.addClass(interval_class).after('<label>');
+    }
+}
+
 
 let adversaries_index = 0;
 const adversaries_common_stat_lines = {
@@ -98,18 +108,11 @@ function adversaries_addAdversary(selector) {
         el_track.empty();
         const total = adversary[`${selector}_per`] * adversary.size;
 
-        for (let i = 0; i <= total; i++) {
-            let checkbox = $(`<input type="radio" class="${radio_class}">`);
-            checkbox.click(function () {
-                adversary[`${selector}`] = 1 + i;
-                updateTrack(selector);
-                updateSkills();
-            });
-            el_track.append(checkbox);
-
-            if (i > 0 && i % adversary[`${selector}_per`] === 0)
-                checkbox.addClass('kill').after('<label>');
-        }
+        global_buildTrack(el_track, total, adversary[`${selector}_per`], radio_class, 'kill', function (idx) {
+            adversary[`${selector}`] = 1 + idx;
+            updateTrack(selector);
+            updateSkills();
+        })
     }
 
     function updateTrack(selector) {
