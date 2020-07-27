@@ -42,6 +42,17 @@ ul.navigation li {
 ul.navigation li:hover {
   background-color: red;
 }
+/* Add Buttons */
+button.add-button {
+  height: 35px;
+  border-radius: 9px;
+  border: 2px solid darkred;
+  margin-top: 5px;
+}
+button.add-button:hover {
+  background: white;
+  border-color: red;
+}
 .tab-content {
   padding: 0 20px;
 }
@@ -49,21 +60,6 @@ ul.navigation li:hover {
 div#adversaries {
   width: 100%;
   overflow: auto;
-}
-/* Add Buttons */
-#add_minion,
-#add_rival,
-#add_nemesis {
-  height: 35px;
-  border-radius: 9px;
-  border: 2px solid darkred;
-  margin-top: 5px;
-}
-#add_minion:hover,
-#add_rival:hover,
-#add_nemesis:hover {
-  background: white;
-  border-color: red;
 }
 /* Adversary Elements */
 div[name="miniongroup"],
