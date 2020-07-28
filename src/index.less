@@ -100,6 +100,24 @@ div.stat-block {
   }
 }
 
+/* Simple number fields */
+input[type=number].simple {
+  width: 20px;
+  margin: 0px 6px 3px 3px;
+  padding: 2px;
+  text-align: center;
+  -moz-appearance: textfield;
+  font-size: 12px;
+  font-weight: bold;
+
+  /* yay, chrome workarounds */
+
+  &::-webkit-inner-spin-button,
+  &::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+  }
+}
+
 /* Labels used on tracks */
 input[type=radio].interval {
   & + label {

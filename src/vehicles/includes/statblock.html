@@ -23,6 +23,14 @@
         </div>
     </div>
 
+    @@if (group === true){
+    <div class="container-dice container-flex">
+        <label class="field-label">Agility:</label>
+        <input name="agility" class="simple" type="number" value="1" min="1" max="6">
+        <div class="attribute-dice" name="dice_group"></div>
+    </div>
+    }
+
     <div class="container-attributes">
         <div class="derived">
             @@if (group === true){

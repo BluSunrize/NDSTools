@@ -83,6 +83,21 @@ div.stat-block label.field-label {
   font-size: 12px;
   margin: 5px;
 }
+/* Simple number fields */
+input[type=number].simple {
+  width: 20px;
+  margin: 0px 6px 3px 3px;
+  padding: 2px;
+  text-align: center;
+  -moz-appearance: textfield;
+  font-size: 12px;
+  font-weight: bold;
+  /* yay, chrome workarounds */
+}
+input[type=number].simple::-webkit-inner-spin-button,
+input[type=number].simple::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+}
 /* Labels used on tracks */
 input[type=radio].interval + label {
   opacity: 50%;
@@ -118,7 +133,6 @@ div.container-attributes div.attribute {
   margin-right: 10px;
   text-align: center;
   padding-top: 12px;
-  /* yay, chrome workarounds */
 }
 div.container-attributes div.attribute input[type=number] {
   width: 40px;
@@ -130,6 +144,7 @@ div.container-attributes div.attribute input[type=number] {
   -moz-appearance: textfield;
   font-size: 25px;
   font-weight: bold;
+  /* yay, chrome workarounds */
 }
 div.container-attributes div.attribute input[type=number]::-webkit-inner-spin-button,
 div.container-attributes div.attribute input[type=number]::-webkit-outer-spin-button {

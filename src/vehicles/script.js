@@ -21,6 +21,7 @@ function vehicles_addVehicle(selector) {
     $('#vehicles').append(vehicle.code);
 
     const el = $(`#vehicles div[group_index=${vehicle.idx}]`);
+    const el_group_dice = el.find('div.container-dice');
     const el_group_size = el.find('[name="group_size"]');
     const el_speed = el.find('[name="speed"]');
     const el_handling = el.find('[name="handling"]');
@@ -33,9 +34,13 @@ function vehicles_addVehicle(selector) {
         el.remove();
     });
 
+    el_group_dice.find('input[name="agility"]').change(function () {
+        updateDice();
+    })
     el_group_size.change(function () {
         vehicle.size = $(this).val();
         updateVehicle(true);
+        updateDice();
     });
     el_speed.change(function () {
         vehicle.speed_max = $(this).val();
@@ -69,7 +74,7 @@ function vehicles_addVehicle(selector) {
         el_armor.val(vehicle.armor);
         el_speed.val(vehicle.speed_max);
         el_handling.val(vehicle.handling);
-        el_defense.each(function(idx) {
+        el_defense.each(function (idx) {
             $(this).val(vehicle.defense[idx]);
         });
         el_hull_per.val(vehicle.hull_per);
@@ -94,6 +99,7 @@ function vehicles_addVehicle(selector) {
         global_buildTrack(el_track, total, vehicle[`${selector}_per`], radio_class, 'kill', false, function (idx) {
             vehicle[`${selector}`] = 1 + idx;
             updateTrack(selector);
+            updateDice();
         })
     }
 
@@ -111,6 +117,17 @@ function vehicles_addVehicle(selector) {
         if (el_track.length === 0)
             return;
         el_track.children('input[type="radio"]').prop('checked', false).slice(0, vehicle[`${selector}`]).prop('checked', true);
+    }
+
+    function updateDice() {
+        if (el_group_dice.length > 0) {
+            let char = el_group_dice.find('input[name="agility"]').val();
+            let hull = Math.max(0, vehicle.hull - 1);
+            let strain = Math.max(0, vehicle.strain - 1);
+            let lost_members = Math.floor(hull / vehicle.hull_per) + Math.floor(strain / vehicle.strain_per);
+            let rank = Math.max(vehicle.size - 1 - lost_members, 0);
+            el_group_dice.find('div.attribute-dice').html(global_buildDice(char, rank));
+        }
     }
 
     updateVehicle(true);
