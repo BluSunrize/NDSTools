@@ -22,14 +22,14 @@
             <label class="dice dice-r"></label>
         </div>
 
-         <div name="miniongroup">
+         <div name="miniongroup" class="stat-block">
     <button name="delete">X</button>
-    <div class="container-name">
+    <div class="container-name container-flex">
         <label class="field-label">Name:</label>
         <input name="name" type="text">
     </div>
 
-    <div class="container-wounds">
+    <div class="container-wounds container-flex">
         <label class="field-label">Wound Tracker:</label>
         <div class="wounds">
         </div>
@@ -141,14 +141,14 @@
         </div>
     </div>
 </div>
-         <div name="rival">
+         <div name="rival" class="stat-block">
              <button name="delete">X</button>
-             <div class="container-name">
+             <div class="container-name container-flex">
                  <label class="field-label">Name:</label>
                  <input name="name" type="text">
              </div>
 
-             <div class="container-wounds">
+             <div class="container-wounds container-flex">
                  <label class="field-label">Wound Tracker:</label>
                  <div class="wounds">
                  </div>
@@ -351,21 +351,21 @@
                  </div>
              </div>
          </div>
-         <div name="nemesis">
+         <div name="nemesis" class="stat-block">
              <button name="delete">X</button>
-             <div class="container-name">
+             <div class="container-name container-flex">
                  <label class="field-label">Name:</label>
                  <input name="name" type="text">
              </div>
 
-             <div class="container-wounds">
+             <div class="container-wounds container-flex">
                  <label class="field-label">Wound Tracker:</label>
                  <div class="wounds">
                  </div>
              </div>
 
              
-             <div class="container-strain">
+             <div class="container-strain container-flex">
                  <label class="field-label">Strain Tracker:</label>
                  <div class="strain">
                  </div>
@@ -571,7 +571,127 @@
                      </div>
                  </div>
              </div>
-         </div> 
+         </div>  <div name="vehicle" class="stat-block">
+    <button name="delete">X</button>
+    <div class="container-name container-flex">
+        <label class="field-label">Name:</label>
+        <input name="name" type="text">
+    </div>
+
+    <div class="container-hull container-flex">
+        <label class="field-label">Hull Tracker:</label>
+        <div class="hull">
+        </div>
+    </div>
+
+    <div class="container-strain container-flex">
+        <label class="field-label">Strain Tracker:</label>
+        <div class="strain">
+        </div>
+    </div>
+
+    <div class="container-speed container-flex">
+        <label class="field-label">Speed Tracker:</label>
+        <div class="speed">
+        </div>
+    </div>
+
+    <div class="container-attributes">
+        <div class="derived">
+            
+            <div class="attribute">
+                <input name="speed" type="number" min="1">
+                <label class="field-label">Speed</label>
+            </div>
+            <div class="attribute">
+                <input name="handling" type="number" min="-4" max="4">
+                <label class="field-label">Handling</label>
+            </div>
+            <div class="attribute vehicle-defense">
+                <input name="defense" title="Fore" type="number" min="0">
+                <input name="defense" title="Port" type="number" min="0">
+                <input name="defense" title="Starboard" type="number" min="0">
+                <input name="defense" title="Aft" type="number" min="0">
+                <label class="field-label">Defense</label>
+            </div>
+            <div class="attribute">
+                <input name="armor" type="number" min="0">
+                <label class="field-label">Armor</label>
+            </div>
+            <div class="attribute">
+                <input name="hull_per" type="number" min="1">
+                <label class="field-label">Hull</label>
+            </div>
+            <div class="attribute">
+                <input name="strain_per" type="number" min="1">
+                <label class="field-label">Strain</label>
+            </div>
+        </div>
+    </div>
+</div>
+<div name="vehiclegroup" class="stat-block">
+    <button name="delete">X</button>
+    <div class="container-name container-flex">
+        <label class="field-label">Name:</label>
+        <input name="name" type="text">
+    </div>
+
+    <div class="container-hull container-flex">
+        <label class="field-label">Hull Tracker:</label>
+        <div class="hull">
+        </div>
+    </div>
+
+    <div class="container-strain container-flex">
+        <label class="field-label">Strain Tracker:</label>
+        <div class="strain">
+        </div>
+    </div>
+
+    <div class="container-speed container-flex">
+        <label class="field-label">Speed Tracker:</label>
+        <div class="speed">
+        </div>
+    </div>
+
+    <div class="container-attributes">
+        <div class="derived">
+            
+            <div class="attribute">
+                <input name="group_size" type="number" min="1">
+                <label class="field-label">Groupsize</label>
+            </div>
+            
+            <div class="attribute">
+                <input name="speed" type="number" min="1">
+                <label class="field-label">Speed</label>
+            </div>
+            <div class="attribute">
+                <input name="handling" type="number" min="-4" max="4">
+                <label class="field-label">Handling</label>
+            </div>
+            <div class="attribute vehicle-defense">
+                <input name="defense" title="Fore" type="number" min="0">
+                <input name="defense" title="Port" type="number" min="0">
+                <input name="defense" title="Starboard" type="number" min="0">
+                <input name="defense" title="Aft" type="number" min="0">
+                <label class="field-label">Defense</label>
+            </div>
+            <div class="attribute">
+                <input name="armor" type="number" min="0">
+                <label class="field-label">Armor</label>
+            </div>
+            <div class="attribute">
+                <input name="hull_per" type="number" min="1">
+                <label class="field-label">Hull</label>
+            </div>
+            <div class="attribute">
+                <input name="strain_per" type="number" min="1">
+                <label class="field-label">Strain</label>
+            </div>
+        </div>
+    </div>
+</div> 
 
     </div>
 
@@ -579,6 +699,8 @@
         <li class="tab" data-tab="home">home</li>
         
         <li class="tab" data-tab="adversaries">adversaries</li>
+        
+        <li class="tab" data-tab="vehicles">vehicles</li>
         
     </ul>
 
@@ -601,6 +723,12 @@
         <button id="add_minion" class="add-button">Add Minion Group</button>
         <button id="add_rival" class="add-button">Add Rival</button>
         <button id="add_nemesis" class="add-button">Add Nemesis</button>
+    </div>
+    
+    <div class="tab-content" data-tab="vehicles">
+        <div id="vehicles"></div>
+        <button id="add_vehicle" class="add-button">Add Vehicle</button>
+        <button id="add_vehiclegroup" class="add-button">Add Vehicle Group</button>
     </div>
     
 

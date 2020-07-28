@@ -4,44 +4,8 @@ div#adversaries {
   overflow: auto;
 }
 
-/* Adversary Elements */
-div[name="miniongroup"],
-div[name="rival"],
-div[name="nemesis"] {
-  display: inline-block;
-  border: 2px solid darkred;
-  min-height: 150px;
-  min-width: 700px;
-  width: 700px;
-  padding: 10px;
-  margin: 10px;
-
-
-  div.container-name,
-  div.container-wounds,
-  div.container-strain {
-    display: flex;
-    margin: 2px;
-  }
-
-  button[name="delete"] {
-    float: right;
-    height: 24px;
-    width: 24px;
-    padding: 0;
-  }
-
-  label.field-label {
-    font-weight: bold;
-    text-transform: uppercase;
-    font-family: arial, sans-serif;
-    font-size: 12px;
-    margin: 5px;
-  }
-}
 
 /* Attributes */
-
 div.container-attributes {
   display: grid;
   grid-template-columns: auto auto;
@@ -175,26 +139,8 @@ div.container-attributes {
 }
 
 
-/* Wounds */
-div.container-wounds label.field-label {
+/* Track labels */
+div.container-wounds label.field-label,
+div.container-strain label.field-label {
   min-width: 112px;
-}
-
-input[type=radio].kill {
-  & + label {
-    opacity: 50%;
-    display: inline-block;
-    width: 0;
-    margin-left: -20px;
-    margin-right: 20px;
-    pointer-events: none;
-
-    &::after {
-      content: '💀';
-    }
-  }
-
-  &:checked + label {
-    opacity: 100%;
-  }
 }

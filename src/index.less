@@ -68,3 +68,54 @@ button.add-button {
 .tab-content {
   padding: 0 20px;
 }
+
+/* Stat Blocks */
+div.stat-block {
+  display: inline-block;
+  border: 2px solid darkred;
+  min-height: 150px;
+  min-width: 700px;
+  width: 700px;
+  padding: 10px;
+  margin: 10px;
+
+  div.container-flex {
+    display: flex;
+    margin: 2px;
+  }
+
+  button[name="delete"] {
+    float: right;
+    height: 24px;
+    width: 24px;
+    padding: 0;
+  }
+
+  label.field-label {
+    font-weight: bold;
+    text-transform: uppercase;
+    font-family: arial, sans-serif;
+    font-size: 12px;
+    margin: 5px;
+  }
+}
+
+/* Labels used on tracks */
+input[type=radio].interval {
+  & + label {
+    opacity: 50%;
+    display: inline-block;
+    width: 0;
+    margin-left: -20px;
+    margin-right: 20px;
+    pointer-events: none;
+  }
+
+  &:checked + label {
+    opacity: 100%;
+  }
+
+  &.kill + label::after {
+    content: '💀';
+  }
+}

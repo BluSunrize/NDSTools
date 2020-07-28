@@ -1,18 +1,18 @@
-<div name="@@key">
+<div name="@@key" class="stat-block">
     <button name="delete">X</button>
-    <div class="container-name">
+    <div class="container-name container-flex">
         <label class="field-label">Name:</label>
         <input name="name" type="text">
     </div>
 
-    <div class="container-wounds">
+    <div class="container-wounds container-flex">
         <label class="field-label">Wound Tracker:</label>
         <div class="wounds">
         </div>
     </div>
 
     @@if (strain === true) {
-    <div class="container-strain">
+    <div class="container-strain container-flex">
         <label class="field-label">Strain Tracker:</label>
         <div class="strain">
         </div>

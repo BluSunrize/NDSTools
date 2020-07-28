@@ -20,10 +20,10 @@ function adversaries_addAdversary(selector) {
     };
 
     let internal = $(`#templates div[name="${selector}"]`).html();
-    adversary.code = $(`<div name="${selector}">`).attr('group_index', adversaries_index).append(internal);
+    adversary.code = $(`<div name="${selector}" class="stat-block">`).attr('group_index', adversaries_index).append(internal);
     $('#adversaries').append(adversary.code);
 
-    const el = $(`div[group_index=${adversary.idx}]`);
+    const el = $(`#adversaries div[group_index=${adversary.idx}]`);
     const el_group_size = el.find('[name="group_size"]');
     const el_soak = el.find('[name="soak"]');
     const el_wounds_per = el.find('[name="wounds_per"]');

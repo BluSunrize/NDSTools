@@ -56,15 +56,8 @@ button.add-button:hover {
 .tab-content {
   padding: 0 20px;
 }
-/* Adversary Container */
-div#adversaries {
-  width: 100%;
-  overflow: auto;
-}
-/* Adversary Elements */
-div[name="miniongroup"],
-div[name="rival"],
-div[name="nemesis"] {
+/* Stat Blocks */
+div.stat-block {
   display: inline-block;
   border: 2px solid darkred;
   min-height: 150px;
@@ -73,34 +66,45 @@ div[name="nemesis"] {
   padding: 10px;
   margin: 10px;
 }
-div[name="miniongroup"] div.container-name,
-div[name="rival"] div.container-name,
-div[name="nemesis"] div.container-name,
-div[name="miniongroup"] div.container-wounds,
-div[name="rival"] div.container-wounds,
-div[name="nemesis"] div.container-wounds,
-div[name="miniongroup"] div.container-strain,
-div[name="rival"] div.container-strain,
-div[name="nemesis"] div.container-strain {
+div.stat-block div.container-flex {
   display: flex;
   margin: 2px;
 }
-div[name="miniongroup"] button[name="delete"],
-div[name="rival"] button[name="delete"],
-div[name="nemesis"] button[name="delete"] {
+div.stat-block button[name="delete"] {
   float: right;
   height: 24px;
   width: 24px;
   padding: 0;
 }
-div[name="miniongroup"] label.field-label,
-div[name="rival"] label.field-label,
-div[name="nemesis"] label.field-label {
+div.stat-block label.field-label {
   font-weight: bold;
   text-transform: uppercase;
   font-family: arial, sans-serif;
   font-size: 12px;
   margin: 5px;
+}
+/* Labels used on tracks */
+input[type=radio].interval + label {
+  opacity: 50%;
+  display: inline-block;
+  width: 0;
+  margin-left: -20px;
+  margin-right: 20px;
+  pointer-events: none;
+}
+input[type=radio].interval:checked + label {
+  opacity: 100%;
+}
+input[type=radio].interval.kill + label::after {
+  content: '💀';
+}
+input[type=radio].interval.max-speed + label::after {
+  content: '⚠';
+}
+/* Adversary Container */
+div#adversaries {
+  width: 100%;
+  overflow: auto;
 }
 /* Attributes */
 div.container-attributes {
@@ -215,21 +219,24 @@ div.container-attributes div.characteristics div.attribute-dice {
   text-align: center;
   line-height: 20px;
 }
-/* Wounds */
-div.container-wounds label.field-label {
+/* Track labels */
+div.container-wounds label.field-label,
+div.container-strain label.field-label {
   min-width: 112px;
 }
-input[type=radio].kill + label {
-  opacity: 50%;
-  display: inline-block;
-  width: 0;
-  margin-left: -20px;
-  margin-right: 20px;
-  pointer-events: none;
+/* Track labels */
+div.container-hull label.field-label,
+div.container-strain label.field-label,
+div.container-speed label.field-label {
+  min-width: 112px;
 }
-input[type=radio].kill + label::after {
-  content: '💀';
+div.container-attributes div.attribute.vehicle-defense {
+  width: 120px;
 }
-input[type=radio].kill:checked + label {
-  opacity: 100%;
+div.container-attributes div.attribute.vehicle-defense input[type=number] {
+  width: 20px;
+  border-radius: 0;
+  padding-top: 2px;
+  padding-bottom: 0;
+  font-size: 14px;
 }

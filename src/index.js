@@ -21,9 +21,13 @@ function global_buildTrack(container, length, interval, radio_class, interval_cl
     for (let i = 0; i <= length; i++) {
         let checkbox = $(`<input type="radio" class="${radio_class}">`);
         checkbox.click(() => callback(i));
-        container.append(checkbox);
-        if (i > 0 && i % interval === 0)
-            checkbox.addClass(interval_class).after('<label>');
+        if (i > 0 && i % interval === 0) {
+            checkbox.addClass("interval");
+            checkbox.addClass(interval_class);
+            container.append(checkbox);
+            container.append('<label>');
+        } else
+            container.append(checkbox);
     }
 }
 
