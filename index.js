@@ -301,6 +301,7 @@ function vehicles_addVehicle(selector) {
     }
 
     updateVehicle(true);
+    updateDice();
 
     vehicles_index++;
 }
