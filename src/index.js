@@ -17,9 +17,10 @@ function global_buildDice(num1, num2) {
     return pool;
 }
 
-function global_buildTrack(container, length, interval, radio_class, interval_class, callback) {
+function global_buildTrack(container, length, interval, radio_class, interval_class, zero_start, callback) {
     for (let i = 0; i <= length; i++) {
-        let checkbox = $(`<input type="radio" class="${radio_class}">`);
+        let title = zero_start?i: 1+i;
+        let checkbox = $(`<input type="radio" class="${radio_class}" title="${title}">`);
         checkbox.click(() => callback(i));
         if (i > 0 && i % interval === 0) {
             checkbox.addClass("interval");

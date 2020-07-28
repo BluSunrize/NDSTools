@@ -98,9 +98,6 @@ input[type=radio].interval:checked + label {
 input[type=radio].interval.kill + label::after {
   content: '💀';
 }
-input[type=radio].interval.max-speed + label::after {
-  content: '⚠';
-}
 /* Adversary Container */
 div#adversaries {
   width: 100%;

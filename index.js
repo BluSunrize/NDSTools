@@ -17,9 +17,10 @@ function global_buildDice(num1, num2) {
     return pool;
 }
 
-function global_buildTrack(container, length, interval, radio_class, interval_class, callback) {
+function global_buildTrack(container, length, interval, radio_class, interval_class, zero_start, callback) {
     for (let i = 0; i <= length; i++) {
-        let checkbox = $(`<input type="radio" class="${radio_class}">`);
+        let title = zero_start?i: 1+i;
+        let checkbox = $(`<input type="radio" class="${radio_class}" title="${title}">`);
         checkbox.click(() => callback(i));
         if (i > 0 && i % interval === 0) {
             checkbox.addClass("interval");
@@ -112,7 +113,7 @@ function adversaries_addAdversary(selector) {
         el_track.empty();
         const total = adversary[`${selector}_per`] * adversary.size;
 
-        global_buildTrack(el_track, total, adversary[`${selector}_per`], radio_class, 'kill', function (idx) {
+        global_buildTrack(el_track, total, adversary[`${selector}_per`], radio_class, 'kill', false, function (idx) {
             adversary[`${selector}`] = 1 + idx;
             updateTrack(selector);
             updateSkills();
@@ -260,7 +261,7 @@ function vehicles_addVehicle(selector) {
         el_track.empty();
         const total = vehicle[`${selector}_per`] * vehicle.size;
 
-        global_buildTrack(el_track, total, vehicle[`${selector}_per`], radio_class, 'kill', function (idx) {
+        global_buildTrack(el_track, total, vehicle[`${selector}_per`], radio_class, 'kill', false, function (idx) {
             vehicle[`${selector}`] = 1 + idx;
             updateTrack(selector);
         })
@@ -269,7 +270,7 @@ function vehicles_addVehicle(selector) {
     function buildSpeedTrack() {
         let el_track = el.find('.speed');
         el_track.empty();
-        global_buildTrack(el_track, vehicle.speed_max, vehicle.speed_max, 'speed', 'max-speed', function (idx) {
+        global_buildTrack(el_track, vehicle.speed_max, vehicle.speed_max, 'speed', 'max-speed', true, function (idx) {
             vehicle.speed = 1 + idx;
             updateTrack('speed');
         })

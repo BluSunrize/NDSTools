@@ -91,7 +91,7 @@ function vehicles_addVehicle(selector) {
         el_track.empty();
         const total = vehicle[`${selector}_per`] * vehicle.size;
 
-        global_buildTrack(el_track, total, vehicle[`${selector}_per`], radio_class, 'kill', function (idx) {
+        global_buildTrack(el_track, total, vehicle[`${selector}_per`], radio_class, 'kill', false, function (idx) {
             vehicle[`${selector}`] = 1 + idx;
             updateTrack(selector);
         })
@@ -100,7 +100,7 @@ function vehicles_addVehicle(selector) {
     function buildSpeedTrack() {
         let el_track = el.find('.speed');
         el_track.empty();
-        global_buildTrack(el_track, vehicle.speed_max, vehicle.speed_max, 'speed', 'max-speed', function (idx) {
+        global_buildTrack(el_track, vehicle.speed_max, vehicle.speed_max, 'speed', 'max-speed', true, function (idx) {
             vehicle.speed = 1 + idx;
             updateTrack('speed');
         })

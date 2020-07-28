@@ -78,7 +78,7 @@ function adversaries_addAdversary(selector) {
         el_track.empty();
         const total = adversary[`${selector}_per`] * adversary.size;
 
-        global_buildTrack(el_track, total, adversary[`${selector}_per`], radio_class, 'kill', function (idx) {
+        global_buildTrack(el_track, total, adversary[`${selector}_per`], radio_class, 'kill', false, function (idx) {
             adversary[`${selector}`] = 1 + idx;
             updateTrack(selector);
             updateSkills();
