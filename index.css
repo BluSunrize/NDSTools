@@ -70,7 +70,8 @@ div.stat-block div.container-flex {
   display: flex;
   margin: 2px;
 }
-div.stat-block button[name="delete"] {
+div.stat-block button[name="delete"],
+div.stat-block button[name="clone"] {
   float: right;
   height: 24px;
   width: 24px;

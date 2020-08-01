@@ -42,16 +42,16 @@ const adversaries_common_stat_lines = {
     "Stormtrooper": [3, 3, 2, 2, 3, 1],
 };
 
-function adversaries_addAdversary(selector) {
+function adversaries_addAdversary(selector, clone) {
     const adversary = {
         idx: adversaries_index,
-        size: 1,
-        soak: 1,
-        wounds_per: 5,
-        strain_per: 5,
+        size: clone?clone.size:1,
+        soak: clone?clone.soak:1,
+        wounds_per: clone?clone.wounds_per:5,
+        strain_per: clone?clone.strain_per:5,
         code: null,
-        wounds: 0,
-        strain: 0,
+        wounds: clone?clone.wounds:0,
+        strain: clone?clone.strain:0,
     };
 
     let internal = $(`#templates div[name="${selector}"]`).html();
@@ -68,6 +68,9 @@ function adversaries_addAdversary(selector) {
 
     el.find('[name="delete"]').click(function () {
         el.remove();
+    });
+    el.find('[name="clone"]').click(function () {
+        adversaries_addAdversary(selector, adversary);
     });
 
     el_group_size.change(function () {
@@ -170,20 +173,20 @@ $(document).ready(function () {
 });
 let vehicles_index = 0;
 
-function vehicles_addVehicle(selector) {
+function vehicles_addVehicle(selector, clone) {
     const vehicle = {
         idx: vehicles_index,
-        size: 1,
-        speed_max: 3,
-        handling: 0,
-        defense: [1, 0, 0, 1],
-        armor: 3,
-        hull_per: 10,
-        strain_per: 10,
+        size: clone?clone.size:1,
+        speed_max: clone?clone.speed_max:3,
+        handling: clone?clone.handling:0,
+        defense: clone?clone.defense:[1, 0, 0, 1],
+        armor: clone?clone.armor:3,
+        hull_per: clone?clone.hull_per:10,
+        strain_per: clone?clone.strain_per:10,
         code: null,
-        speed: 0,
-        hull: 0,
-        strain: 0,
+        speed: clone?clone.speed:0,
+        hull: clone?clone.hull:0,
+        strain: clone?clone.strain:0,
     };
 
     let internal = $(`#templates div[name="${selector}"]`).html();
@@ -202,6 +205,9 @@ function vehicles_addVehicle(selector) {
 
     el.find('[name="delete"]').click(function () {
         el.remove();
+    });
+    el.find('[name="clone"]').click(function () {
+        vehicles_addVehicle(selector, vehicle);
     });
 
     el_group_dice.find('input[name="agility"]').change(function () {

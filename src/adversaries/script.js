@@ -7,16 +7,16 @@ const adversaries_common_stat_lines = {
     "Stormtrooper": [3, 3, 2, 2, 3, 1],
 };
 
-function adversaries_addAdversary(selector) {
+function adversaries_addAdversary(selector, clone) {
     const adversary = {
         idx: adversaries_index,
-        size: 1,
-        soak: 1,
-        wounds_per: 5,
-        strain_per: 5,
+        size: clone?clone.size:1,
+        soak: clone?clone.soak:1,
+        wounds_per: clone?clone.wounds_per:5,
+        strain_per: clone?clone.strain_per:5,
         code: null,
-        wounds: 0,
-        strain: 0,
+        wounds: clone?clone.wounds:0,
+        strain: clone?clone.strain:0,
     };
 
     let internal = $(`#templates div[name="${selector}"]`).html();
@@ -33,6 +33,9 @@ function adversaries_addAdversary(selector) {
 
     el.find('[name="delete"]').click(function () {
         el.remove();
+    });
+    el.find('[name="clone"]').click(function () {
+        adversaries_addAdversary(selector, adversary);
     });
 
     el_group_size.change(function () {
